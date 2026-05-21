@@ -16,8 +16,8 @@ jobs:
        with:
          node-version: 22.14.0
          cache: 'npm'
-    - run: npm
-    - run: npm lint
+     - run: npm
+     - run: npm lint
 
 test:
   runs-on: ubuntu-latest
