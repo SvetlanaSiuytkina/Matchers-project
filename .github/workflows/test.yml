@@ -1,4 +1,4 @@
-name: Jest Tests
+name: Tests
 
 on:
   push:
@@ -7,10 +7,26 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
+  eslint:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+     - uses: actions/checkout@v4
+     - uses: actions/setup-node@v4
+       with:
+         node-version: 22.14.0
+         cache: 'npm'
+    - run: npm
+    - run: npm lint
+
+test:
+  runs-on: ubuntu-latest
+  
+  steps:
+  - uses: actions/checkout@v4
+  - uses: actions/setup-node@v4
+    with:
+      node-version: 22.14.0
+      cache: 'npm'
+  - run: npm
+  - run: npm test -- --coverage

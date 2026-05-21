@@ -1,4 +1,4 @@
-import { sortHeroesHealth } from '../src/index';
+import { sortHeroesHealth } from '../index';
 
 test('sorts the heroes in descending order of health', () => {
     const input = [
