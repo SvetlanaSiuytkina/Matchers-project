@@ -1,29 +1,32 @@
-import js from "@eslint/js";
-import globals from "globals";
-import { defineConfig } from "eslint/config";
-import jestPlugin from "eslint-plugin-jest";
+import js from '@eslint/js';
+import globals from 'globals';
+import { defineConfig } from 'eslint/config';
+import jest from 'eslint-plugin-jest';
 
 export default defineConfig([
+  js.configs.recommended,
   {
-    files: ["**/*.{js,mjs,cjs}"], 
-    plugins: { js }, 
-    extends: ["js/recommended"], 
+    files: ['**/*.{js,mjs,cjs}'], 
     languageOptions: {
       globals: {
         ...globals.browser,
-        ...globals.node
+        ...globals.node,
+        ...globals.jest
       },
     },
-  },
-
-  {
-    files: ["**/*.test.js"],
-    plugins: { jest: jestPlugin },
-    extends: ["plugin:jest/recommended"],
-    languageOptions: {
-      globals: {
-        ...jestPlugin.environments.globals.globals,
-      },
+    plugins: {jest},
+    rules: {
+      'semi': ['error', 'always'],
+      'quotes': ['error', 'single'],
+      'no-console': 'warn',
+      'eqeqeq': 'error',
+      'no-unused-vars': 'error',
+      'no-var': 'error',
+      'prefer-const': 'error',
+      
+      'jest/no-disabled-tests': 'warn',
+      'jest/no-focused-tests': 'error',
+      'jest/no-identical-title': 'error'
     },
   },
 ]);

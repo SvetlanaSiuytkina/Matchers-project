@@ -5,13 +5,13 @@ test('sorts the heroes in descending order of health', () => {
         {name: 'мечник', health: 10},
         {name: 'маг', health: 100},
         {name: 'лучник', health: 80}
-    ]
+    ];
 
     const expected = [
         {name: 'маг', health: 100},
         {name: 'лучник', health: 80},
         {name: 'мечник', health: 10},
-    ]
+    ];
 
     expect(sortHeroesHealth(input)).toEqual(expected);
 });
@@ -25,7 +25,7 @@ test('sorts an array with the same health values', () => {
         {name: 'мечник', health: 10},
         {name: 'маг', health: 10},
         {name: 'лучник', health: 10}
-    ]
+    ];
 
     expect(sortHeroesHealth(input)).toEqual(input);
 });
