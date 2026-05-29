@@ -17,6 +17,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "lint": "eslint src/test/",
+    "fix": "eslint . --fix", 
     "test": "jest --coverage"
   },
   "devDependencies": {

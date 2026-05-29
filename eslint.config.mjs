@@ -23,6 +23,9 @@ export default defineConfig([
       'no-unused-vars': 'error',
       'no-var': 'error',
       'prefer-const': 'error',
+      'eol-last': ['error', 'always'],
+      'indent': ['error', 2],
+      'space-infix-ops': 'error',
       
       'jest/no-disabled-tests': 'warn',
       'jest/no-focused-tests': 'error',
